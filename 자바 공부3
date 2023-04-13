@@ -1,0 +1,39 @@
+package chap_01;
+
+public class _03_Variables {
+	
+	public static void main(String[] args) {
+		//변수의 선언과 할당
+		//변수타입 변수명 = 값;
+		String name="홍길동";
+		int hour=15;
+		
+		System.out.println(name + "님, 배송이 시작됩니다. " + hour + "시에 방문 예정입니다.");
+		System.out.println(name + "님, 배송이 완료되었습니다.");
+		
+		double score = 91.5;
+		char grade = 'A';
+		name = "유재석";
+		System.out.println(name+"님의 평균 점수는"+score + "점 입니다.");
+		System.out.println("귀하의 학점은"+ grade + "입니다.");
+		
+		boolean pass= true;
+		System.out.println(name + "님은 이번 시험에 함격 했을까요?" + pass);
+		
+		double d=3.1569151567;
+		float f = 3.1569151567f; //double는 8바이트 float는 4바이트로 더 큰 바이트를 다루는 게 들어갈려 하니 오류 뒤에 f를 적어 float형임을 알려야함
+		System.out.println(d);
+		System.out.println(f); // 출력하는데 할 수 있는 만큼만 출력하고 잘라버림
+		//그래서 좀더 정밀한 값을 원한다면 double이 좋다
+		//int i = 10000000000;
+		long l = 10000000000l; //l을 붙여야 long타입으로 인식, long 타입이 좀더 많은 숫자를 담을 수 있어 int는 오류
+		long l2 = 10000000000L;
+		long l3 = 1_000_000_000_000l;//_로 나누면 보기 쉽다
+		System.out.println(l3);
+		
+		byte b= 120;
+		short s = 230; //short의 값만 넘지 않아도 int값이여도 괜찮다
+		
+		
+	}
+}
