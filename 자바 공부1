@@ -1,0 +1,14 @@
+package ch_01;
+
+public class HelloWorld {
+	public static void main(String[] args) { //public은 공공 static은 여기있는걸 가져가도 좋다, void는 함수출력할때 필요?
+		System.out.println("Hello World!!");
+		System.out.println("Java!!");
+		//ln의 역할은 출력하고 한칸 띄워주는 역할 
+		//실행 키는 ctrl+f11 
+		//저장 키는 ctrl+s 
+		//자동완성은 ctrl+space (예: sysout하고 ctrl+spcae할 시 System.out.println();명령어가 나온다)
+		//;은 무조건 멸령어 끝에 찍어줘야 명령어가 여기까지 인걸 인식 할 수 있다 ;을 안 찍을 시 실행이 불가능하다
+		//되돌리기 키는 ctrl+z
+	}
+}
