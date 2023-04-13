@@ -1,0 +1,17 @@
+package chap_01;
+
+public class _Ex_01 {
+	public static void main(String[] args) {
+	int x = 1;
+	int y = 2;
+	int temp = 0;
+	System.out.println("x=" +x);
+	System.out.println("y=" +y);
+	temp = x;
+	x = y;
+	y = temp;
+	System.out.println("x=" +x);
+	System.out.println("y=" +y);
+	
+	}
+}
