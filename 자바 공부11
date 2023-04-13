@@ -27,3 +27,4 @@ public class _04_operator4 {
 		System.out.println(!(5 == 5)); //false
 		System.out.println(!(5 == 3)); //true
 	}
+}
