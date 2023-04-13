@@ -1,0 +1,12 @@
+package chap_02;
+
+public class _Ex_02 {
+	public static void main(String[] args) {
+		int numOfapples = 123;
+		int sizeOfBucket = 10;
+		//int numOfBucket = ((numOfapples%sizeOfBucket==0) ? (numOfapples/sizeOfBucket) : (numOfapples/sizeOfBucket)+1);
+		int numOfBucket = numOfapples/sizeOfBucket+((numOfapples % sizeOfBucket) > 0 ? 1 : 0);
+		System.out.println(numOfBucket);
+		
+	}
+}
