@@ -1,0 +1,25 @@
+package chap_03;
+
+public class _03_StringCompare {
+	public static void main(String[] args) {
+		String s1 = "Java";
+		String s2 = "Java";
+		
+		//문자열 비교를 할 때는 == 을 쓸지 않는다.
+		//equals() 사용
+		System.out.println(s1.equals(s2)); //대소문자까지 구별해서 같은지 비교
+		System.out.println(s1.toUpperCase().equals(s2.toUpperCase())); // 대문자로 통일해서 비교
+		System.out.println(s1.equalsIgnoreCase(s2)); //대소문자 관계없이 비교
+		
+		s1= "1234";
+		s2= "1234";
+		System.out.println(s1.equals(s2)); // 내용을 비교
+		System.out.println(s1 == s2); //참조값(주소값)을 비교
+		
+		s1= new String("1234");
+		s2 =new String("1234");
+		
+		System.out.println(s1.equals(s2));
+		System.out.println(s1 == s2);
+	}
+}
