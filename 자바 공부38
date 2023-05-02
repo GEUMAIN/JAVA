@@ -1,5 +1,3 @@
-package chap_05;
-
 public class _06_Ex01 {
 	public static void main(String[] args) {
 		// alphabets 이라는 배열을 만든다.
