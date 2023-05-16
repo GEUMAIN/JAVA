@@ -1,0 +1,15 @@
+package exam;
+
+public class ex07 {
+//1부터 20까지의 정수 중 3의 배수와 합을 구하시오
+	public static void main(String[] args) {
+		int sum = 0;
+		
+		for ( int i= 1; i<=20; i++) {
+			if(i%3==0) { // 만약 3으로 나눴을때 나머지가 0일때(3의 배수)
+				sum = sum+i;
+			}
+		}
+		System.out.println(sum);
+	}
+}
