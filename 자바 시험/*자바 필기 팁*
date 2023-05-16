@@ -1,0 +1,81 @@
+package exam;
+
+public class tip {
+//	객관식 
+//	1번 팁:short는 int 나누기2 long는 int 곱하기 2
+//	2번 팁:byte short int 는 뒤에 문자 붙이지 않음
+//	2번 팁 long만 붙임 예:15151515L
+//	2번 팁 char는 ''만 해야함 ""은 사용 불가능
+//	2번 팁 float는 double 타입을 강제로 바꿀려면 3.14f; f를 붙여야 한다
+//	2번 팁 double 는 아무것도 없이 1.45를 해도 괜찮음
+
+
+
+//	3번
+//	public static void main(String[] args){
+//		int point = 1000;
+//
+//		if (point <=1000 || point != 1000) {
+//		System.out.println("정답1");
+//		} else if (point >=1000){
+//		System.out.println("정답2");
+//		} else {
+//		System.out.println("정답3");
+//		}
+//	}
+//	답: 정답1
+//	3번 팁 : 앞에서 참이라서 이미 정답1이 정해졌으므로 뒤에는 실행하지 않으며
+//	3번 팁 :  and 는 아니고 or이기 때문에 하나만 참이여도 실행가능하다
+
+
+
+
+
+
+//	4번
+//		public static void main(String[] args) {
+//			
+//			int result = 0;
+//			
+//			for (int i =1; i<4; i++) {
+//				for (int j=1; j<i+1; j++) {
+//					result = result +j;
+//				}
+//			}
+			
+//			System.out.println(result);
+//		}
+//	}
+//	정답:10
+//	4번 팁:i는 0,1,2,3까지 늘어날 수 있다
+//	4번 팁:j는 j<2 j<3 j<4이기 때문에
+//	j값은 1 1,2 1,2,3 이 나오며 마지막에 더하기 때문에 총 10이 나온다
+
+
+
+
+
+
+
+
+
+
+
+
+
+//	5번
+//	public class ex03 {
+//		public static void main(String[] args) {
+//			int[][] arr = {
+//					{5,5,5,5,5},
+//					{10,10,10},
+//					{20,20,20,20},
+//					{30,30},
+//					{40}
+//			};
+//		}
+//	}
+//	정답:2
+//	5번 팁:각 행들의 길이는 (1번째 행은 4), (2번째 행은 3) (3번째 행은 4) (4번째 행은 2) (5번째 행은 1)
+//	4번째 행의 길이를 재라고 했으니 2가 나온다
+}
