@@ -1,0 +1,56 @@
+package arrayTest;
+
+import java.util.Scanner;
+
+public class Ex05 {
+
+	//연도와 월을 입력받아 해당 월의 날짜수를 출력하다가 월 입력때 0을 입력하면 종류하는 프로그램
+	//(월을 잘못 입력하면 "잘못 입력하였습니다." 을 출력)
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//1. 13칸 짜리 배열 생성
+		int day[] = new int[13];
+		int year, month;
+		
+		//2. 배열의 날짜의 수에 해당하는 데이터를 입력(단 0번 인덱스는 비워둠)
+		for(int i = 1; i<day.length; i++) {
+			if (i==2) {
+				day[i]= 28;
+			}else if(i==4 || i==6 || i==9 || i==11) {
+				day[i]= 30;
+			}else {
+				day[i] = 31;
+			}
+		}
+		
+		//3.무한반복문을 돌리면서 연과 월을 입력받아 날짜를 출력
+		while(true) {
+			System.out.println("년도 :  ");
+			year = sc.nextInt();
+			System.out.println("월 : ");
+			month = sc.nextInt();
+			
+		//무한반복을 종료하는 방법
+			if (month == 0) {
+				break;
+			}
+			//월을 잘못입력했을 때 예외처리
+			if(month < 1 || month > 12) {
+				System.out.println("잘못입력하였습니다. 월은 1부터 12까지의 정수 중 하나를 쓰셔야 합니다.");
+				continue;
+			}
+			//윤년 처리
+			if (month == 2) {
+				if(year%400==0 || ((year%4==0) &&(year%100 !=0))) {
+					day[2] =29;
+				}else {
+					day[2] = 28;
+				}
+			}
+			
+			
+			System.out.printf("입력한 달의 날수는 %d일 입니다. \n\n",day[month]);
+		}
+	}	
+		
+}
