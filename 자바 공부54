@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Ex06 {
+	
+	// 10개의 정수를 입력받아 nums에 저장한다.
+	//입력받은 10개의 정수 중 가장 큰 수를 출력하는 프로그램을 생성
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int max;
+		int[] nums = new int[10];
+		for(int i =0; i<nums.length; i++) {
+			nums[i] = sc.nextInt();
+			}
+		max = nums[0];
+		for(int i = 1; i<nums.length; i++) {
+			if(max < nums[i]) {
+				max = nums[i];
+			}
+		}
+		System.out.printf("최댓값은 %d입니다\n",max);
+	}
+}
