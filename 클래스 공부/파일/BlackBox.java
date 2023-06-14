@@ -11,4 +11,18 @@ public class BlackBox {
 //	boolean canAutoReport; //자동신고기능
 //	모든 객체에 공통적으로 필요한 변수는 클래스로 변수를 생성한다.
 	static boolean canAutoReport = false;
+	
+	//자동 충돌 감지 기능 여부 안내
+	void AutoReport() {
+		if (canAutoReport == true) {
+			System.out.println("충돌 감지 기능이 활성화 되었습니다.");
+		} else {
+			System.out.println("충돌 감지 기능이 활성화 되지 않았습니다.");
+		}
+	}
+	//메모리카드 삽입 가능
+	void insertMemoryCard(int capacity) {
+		System.out.println("메모리 카드가 삽입되었습니다.");
+		System.out.println("용량은 " + capacity + " GB 입니다.");
+	}
 }
