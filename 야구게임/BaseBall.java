@@ -1,4 +1,4 @@
-package chap_07;
+package game;
 	import java.util.Scanner;
 
 	public class BaseBall {
