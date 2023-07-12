@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Ex08 {
+	
+	// 랜덤 자리 뽑기
+	// 행과 열을 입력 받음
+	// 전체 자리수 행 * 열
+	// 랜덤한 자리로 1부터 행*열 까지의 수를 입으로 부여함.
+	// 예를 들어 3행 3열
+	// 9 7 5
+	// 1 4 6
+	// 3 2 8
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("행을 입력해주세요");
+		int Row = sc.nextInt();
+		
+		System.out.println("열을 입력해주세요");
+		int column = sc.nextInt();
+		
+		int[] seat = new int[Row*column];
+		
+		for (int i = 0; i<seat.length; i++) {
+			seat[i] = (int)(Math.random()*Row*column);
+			for(int j = 0; j<i; j++) {
+				if (seat[i] == seat[j]) {
+					i--;
+				}
+			}
+		}
+		for (int i = 0; i<=seat.length; i++) {
+			System.out.printf("%5d",seat[i]);
+			if(i!=0 && (i+1)%column==0) {
+				System.out.println();
+			}
+		}
+	}
+}
