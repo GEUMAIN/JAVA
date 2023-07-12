@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Ex10 {
+
+	// 계산기(메소드)
+	// 두 개의 정수를 입력 받음
+	// 사칙연산을 선택함 ( + - * /)
+	// add 라는 메소드, minus 메소드, multi 메소드, div 메소드 를 만들어서
+	// 계싼된 결과를 리턴받아 출력하시오.
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("첫번째 정수 하나를 입력해주세요");
+		int a = sc.nextInt();
+		System.out.println("두번째 정수 하나를 입력해주세요");
+		int b = sc.nextInt();
+		System.out.println("기호를 선택해주세요");
+		String c = sc.next();
+		switch (c){
+			case "+" : double result = add(a,b);
+			System.out.println(result);
+			break;
+			case "-" : result = minus(a, b);
+			System.out.println(result);
+			break;
+			case "*" : result = multi(a, b);
+			System.out.println(result);
+			break;
+			case "/" : result = div(a, b);
+			System.out.println(result);
+			break;
+			default :
+				System.out.println("잘못 입력하셨습니다");
+		}
+	}
+	public static int add(int a, int b) {
+		return a + b;
+	}
+	public static int minus(int a, int b) {
+		return a - b;
+	}
+	public static int multi(int a, int b) {
+		return a * b;
+	}
+	public static double div(int a, int b) {
+		return (double)a / b;
+	}
+}
