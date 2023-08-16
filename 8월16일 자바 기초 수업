@@ -1,0 +1,45 @@
+public class Star {
+	public static void main(String[] args) {
+		//j 바꾼 버전
+		for (int j=5; j>0; j--) {
+			for (int i=1; i<=j; i++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		System.out.println("=============");
+		for (int j=1; j<6; j++) {
+			for (int i=1; i<=j; i++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		System.out.println("=============");
+		//i를 바꾼 버전
+		for (int j=1; j<6; j++) {
+			for (int i=5; i>=j; i--) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		System.out.println("============");
+		//j를 바꾼버전
+		for (int j=1; j<8; j+=2) {
+			for (int i=1; i<=j; i++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		System.out.println("============");
+		//피라미드 모양
+		for (int j=1; j<5; j++) {
+			for (int k=5; k>=j; k--) {
+				System.out.print(" ");
+			}
+				for (int i=1; i<=(j*2)-1; i++) {
+					System.out.print("*");
+				}
+				System.out.println();
+		}
+	}
+}
