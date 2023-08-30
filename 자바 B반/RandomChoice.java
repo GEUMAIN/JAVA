@@ -1,0 +1,45 @@
+package jis9825;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class RandomChoice {
+	public static void main(String[] args) throws InterruptedException {
+		//  선택지가 몇개야?
+		/*[설 명]
+		 * 1. Timer, TimerTast를 사용해서 카운트다운 기능을 구현할 수 있습니다
+		 * 2. timer.schedule - 타이머 스케줄러 작업 실행 및 반복 시간을 정의합니다
+		 * 3. timer.cancle - 타이머 실행을 종료합니다
+		 */
+		while (true) {
+		Scanner sc = new Scanner(System.in);
+		Random random = new Random();
+		System.out.println("선택지가 몇개인가요? : ");
+		int num = sc.nextInt();
+		// 선택지 갯수에 따른 배열 만들기
+		// 배열[] = { , , , , ,}
+		String[] array = new String[num];
+		for (int i = 0; i<num; i++) {
+			String user = sc.next();
+			array[i] = user;
+		}
+		// 선택지 배열 속에서 랜덤으로 하나 뽑아내기
+//		double i = (int)((Math.random()*10000)%num); //1~입력한 수?
+		System.out.println("뽑을까요? Yes(1), no(2)");
+		if(sc.nextInt()==1) {
+			Thread.sleep(1000);
+			System.out.println("대기시간 : 3...");
+			Thread.sleep(1000);
+			System.out.println("대기시간 : 2...");
+			Thread.sleep(1000);
+			System.out.println("대기시간 : 1...");
+			System.out.println(array[random.nextInt(num)]);
+			continue;
+		}
+		if(sc.nextInt()==2) {
+			System.out.println("뽑지 않습니다.");
+		}
+		break;
+	}
+}
+}
