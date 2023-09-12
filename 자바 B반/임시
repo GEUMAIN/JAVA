@@ -1,0 +1,19 @@
+package jis9825;
+
+import java.util.Scanner;
+
+public class bhh {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("숫자는?");
+		int num = sc.nextInt();
+		int bhh = num;
+		while (num > 0) {
+			bhh = bhh -(num % 10);
+			num = num/10;
+		}
+		
+		System.out.println(bhh);
+	}
+}
