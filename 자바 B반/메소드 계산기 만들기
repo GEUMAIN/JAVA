@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Method {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		boolean check = true;
+		while (check == true){
+			System.out.println("기호를 입력해주세요 (+,-,/,*)");
+			String sign = sc.next();
+			System.out.println("첫번째 숫자를 입력해주세요");
+			float num1 = sc.nextFloat();
+			System.out.println("두번째 숫자를 입력해주세요");
+			float num2 = sc.nextFloat();
+			
+			switch (sign){
+			case "+" :
+				plus(num1, num2);
+				check = false;
+				break;
+			case "-" :
+				minus(num1, num2);
+				check = false;
+				break;
+			case "/" :
+				divide(num1, num2);
+				check = false;
+				break;
+			case "*" :
+				multi(num1, num2);
+				check = false;
+				break;
+			default :
+				System.out.println("기호를 다시 입력해주세요");
+				continue;
+			}
+		}
+	}
+	public static void plus(float num1, float num2) {
+		System.out.println(num1 + num2);
+	}
+	public static void minus(float num1, float num2) {
+		System.out.println(num1 - num2);
+	}
+	public static void divide(float num1, float num2) {
+		System.out.println(num1 / num2);
+	}
+	public static void multi(float num1, float num2) {
+		System.out.println(num1 * num2);
+	}
+
+}
