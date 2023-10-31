@@ -1,0 +1,162 @@
+package yut_play;
+
+import java.util.Random;
+import java.util.Scanner;
+public class Yut_map {
+	public static void main(String[] args) {
+		String[] m = {
+				"■", //[0]
+				"○","○","○","○", //[1~4]
+				"■",//[5]
+				"○","○","○","○", //[6~9]
+				"■",//[10]
+				"○","○","○","○",//[11~14]
+				"■",//[15]
+				"○","○","○","○"//[16~19]
+				};
+		String[] p1 = {
+				"", //[0]
+				"","","","", //[1~4]
+				"",//[5]
+				"","","","", //[6~9]
+				"",//[10]
+				"","","","",//[11~14]
+				"",//[15]
+				"","","",""//[16~19]
+				};
+		String[] p2 = {
+				"", //[0]
+				"","","","", //[1~4]
+				"",//[5]
+				"","","","", //[6~9]
+				"",//[10]
+				"","","","",//[11~14]
+				"",//[15]
+				"","","",""//[16~19]
+				};
+//		System.out.println(m[10]+" "+m[9]+" "+m[8]+" "+m[7]+" "+m[6]+" "+m[5]);
+//		System.out.println(m[11]+"	  "+m[4]);
+//		System.out.println(m[12]+"	  "+m[3]);
+//		System.out.println(m[13]+"	  "+m[2]);
+//		System.out.println(m[14]+"	  "+m[1]);
+//		System.out.println(m[15]+" "+m[16]+" "+m[17]+" "+m[18]+" "+m[19]+" "+m[0]);
+		Scanner sc = new Scanner(System.in);
+		int p1_pos = 0;
+		int p2_pos = 0;
+		viewMap(m,p1,p2);
+		System.out.println("플레이어1 이름을 입력해주세요");
+		String p1Name = sc.next();
+		System.out.println("플레이어2 이름을 입력해주세요");
+		String p2Name = sc.next();
+		while (true) {
+			int p1pos = 0;
+			int p2pos = 0;
+			if (sc.nextInt() == 1) {
+				p1pos = YutThorw();
+			}
+			p1_pos = move(p1,p1Name,p1_pos,p1pos);
+			viewMap(m,p1,p2);
+				// 결과 출력
+			if (sc.nextInt() == 1) {
+				p2pos = YutThorw();
+			}
+			p2_pos = move(p2,p2Name,p2_pos,p2pos);
+			viewMap(m,p1,p2);
+		}
+	}
+
+	public static void viewMap(String[] m,String[] p1,String[] p2) {
+		System.out.println("===========================================");
+		System.out.printf("%s%s%s \t %s%s%s \t %s%s%s \t %s%s%s \t %s%s%s \t %s%s%s \n",p1[10],m[10],p2[10],p1[9],m[9],p2[9],p1[8],m[8],p2[8],p1[7],m[7],p2[7],p1[6],m[6],p2[6],p1[5],m[5],p2[5]);
+		System.out.println();
+		System.out.println();
+		System.out.printf("%s%s%s \t \t \t \t \t %s%s%s \n",p1[11],m[11],p2[11],p1[4],m[4],p2[4]);
+		System.out.println();
+		System.out.println();
+		System.out.printf("%s%s%s \t \t \t \t \t %s%s%s \n",p1[12],m[12],p2[12],p1[3],m[3],p2[3]);
+		System.out.println();
+		System.out.println();
+		System.out.printf("%s%s%s \t \t \t \t \t %s%s%s \n",p1[13],m[13],p2[13],p1[2],m[2],p2[2]);
+		System.out.println();
+		System.out.println();
+		System.out.printf("%s%s%s \t \t \t \t \t %s%s%s \n",p1[14],m[14],p2[14],p1[1],m[1],p2[1]);
+		System.out.println();
+		System.out.println();
+		System.out.printf("%s%s%s \t %s%s%s \t %s%s%s \t %s%s%s \t %s%s%s \t %s%s%s \n",p1[15],m[15],p2[15],p1[16],m[16],p2[16],p1[17],m[17],p2[17],p1[18],m[18],p2[18],p1[19],m[19],p2[19],p1[0],m[0],p2[0]);
+		System.out.println("===========================================");
+	}
+	public static int move(String[] p,String p_Name,int p_pos,int kan) {
+		p[p_pos] = "";
+		p_pos = p_pos + kan;
+		if (p_pos > 20) {
+			System.out.println("골인");
+			System.exit(0);
+		}else if (p_pos == 20){
+			p[0] = p_Name;
+		}else {
+			p[p_pos] = p_Name;
+		}
+		
+		return p_pos;
+	}
+	public static int YutThorw() {
+		Random rd = new Random();
+			int Yutmovevalue = 0;
+			// 윷 랜덤 구현
+			String Yut = "";
+			String Yutvalue = "";
+			for (int i =1; i<=4; i++) {
+				Yut = Yut + rd.nextInt(2);
+			}
+			if (Yut.equals("0001") || Yut.equals("0010") || Yut.equals("0100")) {
+				Yutvalue = "도";
+				Yutmovevalue = 1;
+			}
+			if (Yut.equals("0011") || Yut.equals("0101") || Yut.equals("0110") || Yut.equals("1001")|| Yut.equals("1010")|| Yut.equals("1100")) {
+				Yutvalue = "개";
+				Yutmovevalue = 2;
+			}
+			if (Yut.equals("0111") || Yut.equals("1011") || Yut.equals("1101") || Yut.equals("1110")) {
+				Yutvalue = "걸";
+				Yutmovevalue = 3;
+			}
+			if (Yut.equals("1000")) {
+				Yutvalue = "빽도";
+				Yutmovevalue = -1;
+			}
+			if (Yut.equals("0000")) {
+				Yutvalue = "모";
+				Yutmovevalue = 4;
+			}
+			if (Yut.equals("1111")) {
+				Yutvalue = "윷";
+				Yutmovevalue = 5;
+			}
+			YutOutPut(Yut,Yutvalue,Yutmovevalue);
+			return Yutmovevalue;
+	}
+	public static void YutOutPut(String Yut,String Yutvalue ,int Yutmovevalue) {
+		// Yut : 1	1	1	0
+				// [0][1][2][3]
+				for (int i = 0; i<Yut.length(); i++) {
+					if(Yut.charAt(i) == '0') {
+						//0일때
+						System.out.println("┌────────────┐");
+						System.out.println("│            │");
+						System.out.println("└────────────┘");	
+					}else{
+						if(Yutvalue == "빽도") {
+							System.out.println("┌────────────┐");
+							System.out.println("│ X          │");
+							System.out.println("└────────────┘");	
+						}else {
+							//1일때
+							System.out.println("┌────────────┐");
+							System.out.println("│ X  X  X  X │");
+							System.out.println("└────────────┘");	
+						}
+					}
+				}
+				System.out.println(Yut+" "+Yutvalue+", "+Yutmovevalue+"칸만큼 이동합니다.");
+			}
+}
