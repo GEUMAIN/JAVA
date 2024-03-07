@@ -14,5 +14,4 @@
 ![깃허브 자료3](https://github.com/GEUMAIN/JAVA/assets/128437656/36df35b7-1441-4b24-b711-85534c7d5951)
 ### 이렇게 함수를 불러오면
 ![깃허브 자료4](https://github.com/GEUMAIN/JAVA/assets/128437656/fca7b83e-3189-4892-b417-3699e16591b4)
-![깃허브 자료4](https://github.com/GEUMAIN/JAVA/assets/128437656/4834d83b-0084-4754-8032-87688ab53eac)
 ### 이런 결과가 나온다
