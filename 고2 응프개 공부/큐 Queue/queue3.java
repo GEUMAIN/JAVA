@@ -6,11 +6,11 @@ import java.util.NoSuchElementException;
 
 
 
-class Queue<T>{
+class Queue<T>{ //클래스 Queue
 
    
 
-   class Node<T> {
+   class Node<T> { // 클래스 Node
 
        private T data;
 
@@ -34,23 +34,23 @@ class Queue<T>{
 
    
 
-   public void add(T item) {
+   public void add(T item) { //데이터를 넣는 함수
 
        Node<T> t = new Node<T>(item);
 
        
 
-       if (last != null) {
+       if (last != null) { //만약 앞선 데이터가 있다면
 
-           last.next = t;
+           last.next = t; //그 데이터와 연결
 
        }
 
-       last = t;
+       last = t; //포인터를 마지막으로 이동
 
-       if (first == null) {
+       if (first == null) { //만약 데이터가 없다면
 
-           first = last;
+           first = last; //데이터를 마지막으로 연결
 
        }
 
@@ -58,25 +58,25 @@ class Queue<T>{
 
    
 
-   public T remove() {
+   public T remove() { //데이터 빼기
 
-       if (first == null) {
+       if (first == null) { //데이터가 없다면
 
-           throw new NoSuchElementException();
+           throw new NoSuchElementException(); //오류처리
 
        }
 
        
 
-       T data = first.data;
+       T data = first.data; //지울 데이터 저장
 
-       first = first.next;
+       first = first.next; //지웠으니 다음 데이터가 처음
 
        
 
-       if (first == null) {
+       if (first == null) { //데이터가 없다면
 
-           last = null;
+           last = null; //마지막도 null값
 
        }
 
@@ -88,19 +88,19 @@ class Queue<T>{
 
    public T peek() {
 
-       if (first == null) {
+       if (first == null) { //데이터가 없으면
 
-           throw new NoSuchElementException();
+           throw new NoSuchElementException(); //오류 처리
 
        }
 
-       return first.data;
+       return first.data; //있다면 데이터의 정보 return
 
    }
 
    
 
-   public boolean isEmpty() {
+   public boolean isEmpty() { //비었는지 확인
 
        return first == null;
 
